@@ -6,6 +6,27 @@
     "engines": {
         "vscode": "^1.44.0"
     },
+    "publisher": "laurencebahiirwa",
+	"author": {
+		"name": "Laurence Bahiirwa"
+	},
+	"license": "GPLv3",
+	"homepage": "https://github.com/bahiirwa/elementor-snippets",
+	"repository": {
+		"type": "git",
+		"url": "https://github.com/bahiirwa/elementor-snippets"
+	},
+	"bugs": {
+		"url": "https://github.com/bahiirwa/elementor-snippets/issues"
+	},
+	"icon": "images/elementor-logo.png",
+	"keywords": [
+		"Elementor",
+		"Elementor Widgets",
+		"Widgets",
+		"Elementor Controls",
+		"Controls"
+	],
     "categories": [
         "Snippets"
     ],
@@ -22,6 +43,10 @@
             {
                 "language": "php",
                 "path": "./snippets/hooks.json"
+            },
+            {
+                "language": "php",
+                "path": "./snippets/categories.json"
             }
         ]
     }

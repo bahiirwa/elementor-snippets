@@ -1,0 +1,27 @@
+{
+    "el_cat_new_category": {
+		"prefix": "el_cat_new_category",
+		"body": [
+            "function add_elementor_widget_categories( $elements_manager ) {",
+                "",
+                "$elements_manager->add_category(",
+                    "'first-category',",
+                    "[",
+                        "'title' => __( 'First Category', 'plugin-name' ),",
+                        "'icon' => 'fa fa-plug',",
+                    "]",
+                ");",
+                "$elements_manager->add_category(",
+                    "'second-category',",
+                    "[",
+                        "'title' => __( 'Second Category', 'plugin-name' ),",
+                        "'icon' => 'fa fa-plug',",
+                    "]",
+                ");",
+                "",
+            "}",
+            "add_action( 'elementor/elements/categories_registered', 'add_elementor_widget_categories' );"
+		],
+        "description": "Elementor allows developers to add new Widget Categories for their own custom widgets. Registering a new widget category is done using the elementor/elements/categories_registered action. Note that when creating a new category, you need to supply the category name/slug, category title/label and the category icon. Widget categories in Elementor are used to organize the widgets into groups. When Elementor is initialized, it registers several default categories. The categories are displayed in the widgets panel, only if they have widgets assigned to them.b"
+    }
+}

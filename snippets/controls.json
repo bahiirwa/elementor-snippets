@@ -1,42 +1,38 @@
 {
-    "el_add_styles": {
-		"prefix": "el_add_styles",
+    "el_register_new_controls": {
+		"prefix": "el_register_new_controls",
 		"body": [
-            "public function init() {",
+            "final class Elementor_Test_Extension {",
             "",
-                "// Register Widget Styles",
-                "add_action( 'elementor/frontend/after_enqueue_styles', [ $this, '${1:widget_styles}' ] );",
-            "",
+                "public function init() {",
+                "",
+                    "// Include plugin files",
+                    "$this->includes();",
+                "",
+                    "// Register controls",
+                    "add_action( 'elementor/controls/controls_registered', [ $this, '${1:register_controls}' ] );",
+                "",
+                "}",
+                "",
+                "public function includes() {",
+                "",
+                    "require_once( __DIR__ . '/controls/${2:test-control-1}.php' );",
+                    "require_once( __DIR__ . '/controls/${3:test-control-1}.php' );",
+                "",
+                "}",
+                "",
+                "public function ${1:register_controls}() {",
+                "",
+                    "$controls_manager = \\Elementor\\Plugin::$instance->controls_manager;",
+                    "$controls_manager->register_control( '${4:control-type-1}', new ${5:Test_Control1}() );",
+                    "$controls_manager->register_control( '${6:control-type-1}', new ${7:Test_Control2}() );",
+                "",
+                "}",
+                "",
             "}",
-            "",
-            "public function ${1:widget_styles}() {",
-            "",
-                "wp_register_style( '${2:widget-1}', plugins_url( 'css/${2:widget-1}.css', __FILE__ ) );",
-                "wp_register_style( '${3:widget-1}', plugins_url( 'css/${3:widget-1}.css', __FILE__ ) );",
-            "",
-            "}"
+            "Elementor_Test_Extension::instance();"
 		],
-		"description": "Registering Custom Styles: In some widgets we would like to register custom styles, this can be done with the elementor/frontend/after_enqueue_styles hook"
-    },
-    "el_add_scripts": {
-		"prefix": "el_add_scripts",
-		"body": [
-            "public function init() {",
-            "",
-                "// Register Widget Scripts",
-                "add_action( 'elementor/frontend/after_register_scripts', [ $this, '${1:widget_scripts}' ] );",
-            "",
-            "}",
-            "",
-            "public function ${1:widget_scripts}() {",
-            "",
-                "wp_register_script( '${2:widget-2}', plugins_url( 'js/libs/${2:widget-2}.js', __FILE__ ) );",
-                "wp_register_script( '${3:widget-3}', plugins_url( 'js/${3:widget-3}.js', __FILE__ ) );",
-                "wp_register_script( '${3:widget-4}', plugins_url( 'js/${3:widget-4}.js', __FILE__ ), [ 'jquery', '${2:widget-2}' ] );",
-            "",
-            "}"
-		],
-		"description": "Registering Custom Scripts. Other widgets need custom JS to run, in those cases we need to register scripts with the elementor/frontend/after_register_scripts hook"
+		"description": "Registering New Controls:  Add Custom Functionality to add a new controls to Elementor we need to register the control class using the elementor/controls/controls_registered action hook."
     }
     
 }

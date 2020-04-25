@@ -4,21 +4,21 @@
 		"body": [
             "add_action( 'elementor/frontend/after_enqueue_styles', '${1:widget_styles}' );"
 		],
-		"description": "elementor/frontend/after_enqueue_styles hook for Registering Custom Styles"
+		"description": "Registering Custom Styles for Elementor. Add Custom Functionality"
     },
     "el_hook_after_register_scripts": {
 		"prefix": "el_hook_after_register_scripts",
 		"body": [
             "add_action( 'elementor/frontend/after_register_scripts', '${1:widget_scripts}' );"
 		],
-		"description": "elementor/frontend/after_register_scripts hook for Registering Custom Scripts."
+		"description": "Registering Custom JavaScripts for Elementor. Add Custom Functionality"
     },
     "el_hook_controls_registered": {
 		"prefix": "el_hook_controls_registered",
 		"body": [
-            "add_action( 'elementor/controls/controls_registered', [ $this, 'register_controls' ] );"
+            "add_action( 'elementor/controls/controls_registered', '${1:register_controls}' );"
 		],
-		"description": "elementor/controls/controls_registered hook to add a new controls to Elementor."
+		"description": "Hook to Add a new controls to Elementor. Add Custom Functionality"
     }
     
 }
