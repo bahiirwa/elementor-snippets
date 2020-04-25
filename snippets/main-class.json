@@ -1,0 +1,100 @@
+{
+    "el_main_plugin_class": {
+		"prefix": "el_main_plugin_class",
+		"body": [
+            "final class Elementor_Test_Extension {",
+            "",
+	            "const VERSION = '${1:Plugin Name}';",
+	            "const MINIMUM_ELEMENTOR_VERSION = '${2:Plugin Name};",
+	            "const MINIMUM_PHP_VERSION = '${3:Plugin Name};",
+            "",
+	            "private static $_instance = null;",
+	            "public static function instance() {}",
+            "",
+	            "public function __construct() {}",
+	            "public function init() {}",
+	            "public function includes() {}",
+            "}",
+            "Elementor_Test_Extension::instance();"
+		],
+		"description": "The main plugin class should have basic information about the extensions, to check basic requirements and to load the required files to activate the plugin functionality."
+    },
+    "el_single_instance": {
+		"prefix": "el_single_instance",
+		"body": [
+            "final class Elementor_Test_Extension {",
+            "",
+                "private static $_instance = null;",
+            "",
+                "public static function instance() {",
+            "",
+                    "if ( is_null( self::$_instance ) ) {",
+                        "self::$_instance = new self();",
+                    "}",
+                    "return self::$_instance;",
+            "",
+                "}",
+            "",
+            "}",
+            "Elementor_Test_Extension::instance();"
+		],
+		"description": "Single Instance. The plugin class should use a singleton design pattern to make sure it loads only once:"
+    },
+    "el_constructor_class": {
+		"prefix": "el_constructor_class",
+		"body": [
+            "final class Elementor_Test_Extension {",
+            "",
+                "private static $_instance = null;",
+            "",
+                "public static function instance() {",
+            "",
+                    "if ( is_null( self::$_instance ) ) {",
+                        "self::$_instance = new self();",
+                    "}",
+                    "return self::$_instance;",
+            "",
+                "}",
+            "",
+            "}",
+            "Elementor_Test_Extension::instance();"
+		],
+		"description": "The constructor should load localization functionality and initiate the plugin. The init process should check for basic requirements and then then run the plugin logic. Note that If one of the basic plugin requirements fails the plugin logic won’t run."
+    },
+    "el_register_new_controls": {
+		"prefix": "el_register_new_controls",
+		"body": [
+            "final class Elementor_Test_Extension {",
+            "",
+                "public function init() {",
+                "",
+                    "// Include plugin files",
+                    "$this->includes();",
+                "",
+                    "// Register controls",
+                    "add_action( 'elementor/controls/controls_registered', [ $this, '${1:register_controls}' ] );",
+                "",
+                "}",
+                "",
+                "public function includes() {",
+                "",
+                    "require_once( __DIR__ . '/controls/${2:test-control-1}.php' );",
+                    "require_once( __DIR__ . '/controls/${3:test-control-1}.php' );",
+                "",
+                "}",
+                "",
+                "public function ${1:register_controls}() {",
+                "",
+                    "$controls_manager = \\Elementor\\Plugin::$instance->controls_manager;",
+                    "$controls_manager->register_control( '${4:control-type-1}', new ${5:Test_Control1}() );",
+                    "$controls_manager->register_control( '${6:control-type-1}', new ${7:Test_Control2}() );",
+                "",
+                "}",
+                "",
+            "}",
+            "Elementor_Test_Extension::instance();"
+		],
+		"description": "Registering New Controls: To add a new controls to Elementor we need to register the control class using the elementor/controls/controls_registered action hook."
+    }
+    
+}

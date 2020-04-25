@@ -1,0 +1,28 @@
+{
+    "name": "elementor-snippets",
+    "displayName": "elementor-snippets",
+    "description": "Code snippets to build Elementor Plugin widgets",
+    "version": "0.0.1",
+    "engines": {
+        "vscode": "^1.44.0"
+    },
+    "categories": [
+        "Snippets"
+    ],
+    "contributes": {
+        "snippets": [
+            {
+                "language": "php",
+                "path": "./snippets/main-class.json"
+            },
+            {
+                "language": "php",
+                "path": "./snippets/controls.json"
+            },
+            {
+                "language": "php",
+                "path": "./snippets/hooks.json"
+            }
+        ]
+    }
+}
