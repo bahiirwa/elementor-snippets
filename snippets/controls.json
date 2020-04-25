@@ -1,6 +1,6 @@
 {
-    "el_register_new_controls": {
-		"prefix": "el_register_new_controls",
+    "el_ctrl_register_new_controls": {
+		"prefix": "el_ctrl_register_new_controls",
 		"body": [
             "final class Elementor_Test_Extension {",
             "",

@@ -19,8 +19,8 @@
 		],
 		"description": "The main plugin class should have basic information about the extensions, to check basic requirements and to load the required files to activate the plugin functionality."
     },
-    "el_single_instance": {
-		"prefix": "el_single_instance",
+    "el_main_single_instance": {
+		"prefix": "el_main_single_instance",
 		"body": [
             "final class Elementor_Test_Extension {",
             "",
@@ -40,8 +40,8 @@
 		],
 		"description": "Single Instance. The plugin class should use a singleton design pattern to make sure it loads only once:"
     },
-    "el_constructor_class": {
-		"prefix": "el_constructor_class",
+    "el_main_constructor_class": {
+		"prefix": "el_main_constructor_class",
 		"body": [
             "public function __construct() {",
             "",
@@ -65,8 +65,8 @@
 		],
 		"description": "The constructor should load localization functionality and initiate the plugin. The init process should check for basic requirements and then then run the plugin logic. Note that If one of the basic plugin requirements fails the plugin logic won’t run."
     },
-    "el_version_elementor": {
-		"prefix": "el_version_elementor",
+    "el_main_version_elementor": {
+		"prefix": "el_main_version_elementor",
 		"body": [
             "const MINIMUM_ELEMENTOR_VERSION = '${3:1.0.0}';",
             "",
@@ -98,8 +98,8 @@
 		],
 		"description": "The constructor should load localization functionality and initiate the plugin. The init process should check for basic requirements and then then run the plugin logic. Note that If one of the basic plugin requirements fails the plugin logic won’t run."
     },
-    "el_if_elementor": {
-		"prefix": "el_if_elementor",
+    "el_main_if_elementor": {
+		"prefix": "el_main_if_elementor",
 		"body": [
             "public function init() {",
             "",
@@ -128,8 +128,8 @@
 		],
 		"description": "As the extension extend Elementor functionality, it should check whether Elementor is installed and activated before loading the main functionality."
     },
-    "el_add_styles": {
-		"prefix": "el_add_styles",
+    "el_main_add_styles": {
+		"prefix": "el_main_add_styles",
 		"body": [
             "public function init() {",
             "",
@@ -147,8 +147,8 @@
 		],
 		"description": "Registering Custom Styles: In some widgets we would like to register custom styles, this can be done with the elementor/frontend/after_enqueue_styles hook"
     },
-    "el_add_scripts": {
-		"prefix": "el_add_scripts",
+    "el_main_add_scripts": {
+		"prefix": "el_main_add_scripts",
 		"body": [
             "public function init() {",
             "",
