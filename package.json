@@ -43,12 +43,20 @@
                 "path": "./snippets/controls.json"
             },
             {
+                "language": "js",
+                "path": "./snippets/hooks/js.json"
+            },
+            {
                 "language": "php",
-                "path": "./snippets/hooks.json"
+                "path": "./snippets/hooks/php.json"
             },
             {
                 "language": "php",
                 "path": "./snippets/categories.json"
+            },
+            {
+                "language": "php",
+                "path": "./snippets/functions.json"
             }
         ]
     }

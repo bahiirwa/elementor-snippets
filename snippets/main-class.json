@@ -98,6 +98,39 @@
 		],
 		"description": "The constructor should load localization functionality and initiate the plugin. The init process should check for basic requirements and then then run the plugin logic. Note that If one of the basic plugin requirements fails the plugin logic won’t run."
     },
+    "el_main_php_version_elementor": {
+		"prefix": "el_main_php_version_elementor",
+		"body": [
+            "const MINIMUM_PHP_VERSION = '${1:7.0}';",
+            "",
+            "public function init() {",
+            "",
+                "// Check for required PHP version",
+                "if ( version_compare( PHP_VERSION, self::MINIMUM_PHP_VERSION, '<' ) ) {",
+                    "add_action( 'admin_notices', [ $this, 'admin_notice_minimum_php_version' ] );",
+                    "return;",
+                "}",
+            "",
+            "}",
+            "",
+            "public function admin_notice_minimum_php_version() {",
+            "",
+                "if ( isset( $_GET['activate'] ) ) unset( $_GET['activate'] );",
+            "",
+                "$message = sprintf(",
+                    "/* translators: 1: Plugin name 2: PHP 3: Required PHP version */",
+                    "esc_html__( '\"%1$s\" requires \"%2$s\" version %3$s or greater.', 'elementor-test-extension' ),",
+                    "'<strong>' . esc_html__( '${2:Elementor Test Extension}', '${6:elementor-test-extension}' ) . '</strong>',",
+                    "'<strong>' . esc_html__( '${3:Elementor}', '${6:elementor-test-extension}' ) . '</strong>',",
+                    "self::MINIMUM_PHP_VERSION",
+                ");",
+            "",
+                "printf( '<div class=\"notice notice-warning is-dismissible\"><p>%1$s</p></div>', $message );",
+            "",
+            "}"
+		],
+		"description": "Elementor extensions should also check for minimum required PHP version. Keep in mind that Elementor has it’s own minimum required PHP version, the extension should use a greater PHP version than the one Elementor is using. You need to check the minimum required PHP version before loading the main functionality."
+    },
     "el_main_if_elementor": {
 		"prefix": "el_main_if_elementor",
 		"body": [
@@ -166,6 +199,35 @@
             "}"
 		],
 		"description": "Registering Custom Scripts. Other widgets need custom JS to run, in those cases we need to register scripts with the elementor/frontend/after_register_scripts hook"
+    },
+    "el_main_widgets_register": {
+		"prefix": "el_main_widgets_register",
+		"body": [
+            "public function init() {",
+            "",
+                "// Include plugin files",
+                "$this->includes();",
+            "",
+                "// Register widgets",
+                "add_action( 'elementor/widgets/widgets_registered', [ $this, '${1:widget_scripts}' ]  );",
+            "",
+            "}",
+            "",
+            "public function includes() {",
+            "",
+                "require_once( __DIR__ . '/widgets/${2:test-widget-1}.php' );",
+                "require_once( __DIR__ . '/widgets/${3:test-widget-2}.php' );",
+            "",
+            "}",
+            "",
+            "public function register_widgets() {",
+            "",
+                "\\Elementor\\Plugin::instance()->widgets_manager->register_widget_type( new \\${4:Elementor_Test_Widget1}() );",
+                "\\Elementor\\Plugin::instance()->widgets_manager->register_widget_type( new \\${5:Elementor_Test_Widget2}() );",
+            "",
+            "}"
+		],
+		"description": "Registering New Widgets. To add a new widget to Elementor we need to register the widget class using the widget manager. It’s a pretty simple process, it is done using the elementor/widgets/widgets_registered action."
     }
     
 }

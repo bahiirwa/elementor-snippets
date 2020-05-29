@@ -1,0 +1,77 @@
+{
+    "el_fx_elementor_load_plugin_textdomain": {
+		"prefix": "el_fx_elementor_load_plugin_textdomain",
+		"body": [
+            "elementor_load_plugin_textdomain()"
+		],
+        "description": [
+            "Returns (void). Function: Load gettext translate for Elementor text domain.",
+            "",
+            "Source: elementor.php"
+        ]            
+    },
+    "el_fx_elementor_fail_wp_version": {
+		"prefix": "el_fx_elementor_fail_wp_version",
+		"body": [
+            "elementor_fail_wp_version()"
+		],
+        "description": [
+            "Returns (void). Function: Elementor admin notice for minimum WordPress version.",
+            "",
+            "Description: Warning when the site doesn’t have the minimum required WordPress version.",
+            "",
+            "Source: elementor.php"
+        ]            
+    },
+    "el_fx_elementor_fail_php_version": {
+		"prefix": "el_fx_elementor_fail_php_version",
+		"body": [
+            "elementor_fail_php_version()"
+		],
+        "description": [
+            "Returns (void). Function: Elementor admin notice for minimum PHP version.",
+            "",
+            "Description: Warning when the site doesn’t have the minimum required PHP version.",
+            "",
+            "Source: elementor.php"
+        ]            
+    },
+    "el_fx_bfi_wp_image_editor": {
+		"prefix": "el_fx_bfi_wp_image_editor",
+		"body": [
+            "bfi_wp_image_editor( $editorArray )"
+		],
+        "description": [
+            "Source: includes/libraries/bfi-thumb/bfi-thumb.php",
+            "",
+            "Uses: includes/libraries/bfi-thumb/bfi-thumb.php: BFI_Class_Factory::getNewestVersion()"
+        ]            
+    },
+    "el_fx_bfi_image_downsize": {
+		"prefix": "el_fx_bfi_image_downsize",
+		"body": [
+            "bfi_image_downsize( $out,  $id,  $size )"
+		],
+        "description": [
+            "Source: includes/libraries/bfi-thumb/bfi-thumb.php: bfi_thumb()",
+            "Uses: includes/libraries/bfi-thumb/bfi-thumb.php: BFI_Class_Factory::getNewestVersion()",
+            "",
+            "Used By: includes/libraries/bfi-thumb/bfi-thumb.php: bfi_image_downsize()",
+            ""
+        ]            
+    },
+    "el_fx_bfi_thumb": {
+		"prefix": "el_fx_bfi_thumb",
+		"body": [
+            "bfi_thumb( $url,  $params = array(),  $single = true )"
+		],
+        "description": "Source: includes/libraries/bfi-thumb/bfi-thumb.php"
+    },
+    "el_fx_bfi_image_resize_dimensions": {
+		"prefix": "el_fx_bfi_image_resize_dimensions",
+		"body": [
+            "bfi_image_resize_dimensions( $payload,  $orig_w,  $orig_h,  $dest_w,  $dest_h,  $crop = false )"
+		],
+        "description": "Source:  includes/libraries/bfi-thumb/bfi-thumb.php"
+    }
+}

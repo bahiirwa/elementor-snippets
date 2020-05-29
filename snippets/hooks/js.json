@@ -1,0 +1,67 @@
+{
+    "el_hook_scroll_top_distance": {
+		"prefix": "el_hook_scroll_top_distance",
+		"body": [
+            "jQuery( function( $ ) {",
+                "// Add space for Elementor Menu Anchor link",
+                "if ( window.elementorFrontend ) {",
+                    "elementorFrontend.hooks.addFilter( 'frontend/handlers/menu_anchor/scroll_top_distance', function( scrollTop ) {",
+                        "return scrollTop - ${1:30};",
+                    "} );",
+                "}",
+            "} );"
+		],
+        "description": [
+            "Argument: scrollTop, Type: integer",
+            "",
+            "Frontend Filter: Applied to the Menu Anchor widget, set a custom top distance. The default scrollTop. It takes only the WordPress Admin Bar in account."
+        ]
+    },
+    "el_hook_init": {
+		"prefix": "el_hook_init",
+		"body": [
+            "elementorFrontend.hooks.addAction( 'init', function() {",
+                "// Do something that is based on the elementorFrontend object.",
+            "} );"
+		],
+        "description": [
+            "Argument: none",
+            "",
+            "Frontend Actions: Elementor frontend is loaded."
+        ]
+    },
+    "el_hook_global": {
+		"prefix": "el_hook_global",
+		"body": [
+            "elementorFrontend.hooks.addAction( 'frontend/element_ready/global', function( $scope ) {",
+                "if ( $scope.data( 'shake' ) ){",
+                    "$scope.shake();",
+                "}",
+            "} );"
+		],
+        "description": [
+            "Argument: $scope - The current element wrapped with jQuery",
+            "",
+            "Argument: $ -The jQuery instance",
+            "",
+            "frontend/element_ready/global Runs on every element (includes sections and columns) when it’s ready"
+        ]
+    },
+    "el_hook_widget": {
+		"prefix": "el_hook_widget",
+		"body": [
+            "elementorFrontend.hooks.addAction( 'frontend/element_ready/widget', function( $scope ) {",
+                "if ( $scope.data( 'shake' ) ){",
+                    "$scope.shake();",
+                "}",
+            "} );"
+		],
+        "description": [
+            "Argument: $scope - The current element wrapped with jQuery",
+            "",
+            "Argument: $ -The jQuery instance",
+            "",
+            "frontend/element_ready/widget Runs on every widget when it’s ready."
+        ]
+    }
+}
