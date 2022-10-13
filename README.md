@@ -1,5 +1,10 @@
 # Elementor Snippets
 
+![Version](https://img.shields.io/visual-studio-marketplace/v/laurencebahiirwa.elementor-snippets?style=flat-square)
+![Downloads](https://img.shields.io/visual-studio-marketplace/d/laurencebahiirwa.elementor-snippets?style=flat-square)
+![Rating](https://img.shields.io/visual-studio-marketplace/r/laurencebahiirwa.elementor-snippets?style=flat-square)
+
+
 Code snippets to build Elementor Plugin widgets.
 
 Classicpress Snippets is meant to help VS Code users to leverage snippets from ClassicPress and WordPress for Development. This is a personal project and not an official extension from ClassicPress.net.
@@ -8,7 +13,7 @@ Classicpress Snippets is meant to help VS Code users to leverage snippets from C
 
 ### How to use
 
-Type `el_` to see available autocompletions in work.
+Type `el_` in your PHP plugin file to see available autocompletions in work.
 
 ### Install instructions
 
@@ -31,22 +36,7 @@ Autocomplete for:
 
 ### Details
 
--   License: GPLv3
--   Version: 0.0.1
--   Extension URI: https://github.com/bahiirwa/elementor-snippets
-
-## Known Issues
-
-Known issues at avaialble at the [Github Repo](https://github.com/bahiirwa/elementor-snippets/issues)
-
------------------------------------------------------------------------------------------------------------
-
-## Release Notes
-
-All notable changes to the "elementor-snippets" extension will be documented in here and in the details found in the changelog file.
-
-## 0.0.1 [25.04.2020]
-
-- Initial release
-
-**Enjoy!**
+- License: GPLv3
+- Version: 0.0.1
+- Extension URI: https://github.com/bahiirwa/elementor-snippets
+- [Report Issues](https://github.com/bahiirwa/elementor-snippets/issues)
