@@ -2,7 +2,7 @@
     "name": "elementor-snippets",
     "displayName": "Elementor Snippets & Autocompletions",
     "description": "Code snippets to build Elementor Plugin widgets in WordPress",
-    "version": "0.2.1",
+    "version": "0.2.2",
     "engines": {
         "vscode": "^1.18.0"
     },
@@ -10,7 +10,7 @@
 	"author": {
 		"name": "Laurence Bahiirwa"
 	},
-	"license": "GPLv3",
+	"license": "MIT",
 	"homepage": "https://github.com/bahiirwa/elementor-snippets",
 	"repository": {
 		"type": "git",
