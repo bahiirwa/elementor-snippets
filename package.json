@@ -2,7 +2,7 @@
     "name": "elementor-snippets",
     "displayName": "Elementor Snippets & Autocompletions",
     "description": "Code snippets to build Elementor Plugin widgets in WordPress",
-    "version": "0.2.0",
+    "version": "0.2.1",
     "engines": {
         "vscode": "^1.18.0"
     },
